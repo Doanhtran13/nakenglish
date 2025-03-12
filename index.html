@@ -151,15 +151,48 @@
           <h1 class="heading"><strong>Learn without limits and spread knowledge</strong> </h1>
           <p class="doanvan">Build new skills for that "this is my year" feeling with
             courses, certificates, and degrees from world-class university and companies</p>
-          <div class="cta-group">
-            <a href="#!" class="signin"><strong>See courses</strong></a>
-            <botton class="watch-video">
-              <div class="icon">
-                <img src="./icon/play-button.png" alt="">
-              </div>
-              <span><strong>Watch Video</strong></span>
-            </botton>
+            <div class="cta-group">
+              <a href="#!" class="signin"><strong>See courses</strong></a>
+              <button id="watch-video-btn" class="watch-video">
+                  <div class="icon">
+                      <img src="./icon/play-button.png" alt="">
+                  </div>
+                  <span><strong>Watch Video</strong></span>
+              </button>
           </div>
+          <!-- Popup video -->
+          <div class="video-popup" id="videoOverlay" style="display: none;">
+            <div class="video-container">
+              <video id="videoFrame" width="560" height="315" controls>
+              <source src="./video/S-Tìm Kiếm _ 9 Lợi ích của việc học Tiếng Anh..mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ video.
+              </video>
+            </div>
+          </div>
+
+          <!-- JavaScript -->
+          <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const videoOverlay = document.getElementById("videoOverlay"); // videoOverlay id phần nền đen
+            const videoFrame = document.getElementById("videoFrame"); // videoFrame id phần video
+            const watchVideoButton = document.getElementById("watch-video-btn"); // Đảm bảo đúng ID nút
+
+          // Khi nhấn "Watch Video", hiển thị popup & phát video
+            watchVideoButton.addEventListener("click", function () {
+            videoOverlay.style.display = "flex"; // Mở popup
+            videoFrame.play(); // Bắt đầu phát
+          });
+
+          // Khi nhấn ra ngoài popup, đóng popup & dừng video
+          videoOverlay.addEventListener("click", function (event) {
+            if (event.target === videoOverlay) {
+              videoOverlay.style.display = "none"; // Ẩn popup
+              videoFrame.pause(); // Dừng phát video
+              videoFrame.currentTime = 0; // Đưa về giây 0
+              }
+            });
+          });
+          </script>
         </div>
       </div>
     </div>
