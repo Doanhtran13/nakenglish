@@ -112,7 +112,11 @@ a {
 } */
 .doanvan {
   font-size: 20px;
-  font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-family: "Roboto", sans-serif;
 }
 
 .cta-group .signin {
@@ -146,9 +150,10 @@ a {
 }
 
 .section > img {
-  width: 35%;
+  width: 45%;
   background-image: transparent;
   mix-blend-mode: multiply;
+  margin-right: 100px;
 }
 
 .section .section-info {
@@ -250,6 +255,10 @@ a {
   margin-right: 10px;
   width: 25%;
 }
+/* ielts-exam */
+.ielts-exam {
+  padding-bottom: 200px;
+}
 /* footer */
 .footer {
   background: #1f1f28;
@@ -283,13 +292,15 @@ a {
   margin: 0;
 }
 
-.footer ul li a {
+.footer ul li {
   color: white;
   text-decoration: none;
   transition: 0.3s;
   text-align: center;
 }
-
+.footer ul li:hover {
+  color: #fbda61;
+}
 .footer .social-icons {
   display: flex;
   justify-content: center;
@@ -317,8 +328,13 @@ a {
   font-size: 14px;
 }
 .footer p {
-  font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-family: "Roboto", sans-serif;
   font-size: 15px;
+  font-style: bold;
 }
 /* thêm phần button watch video */
 .video-popup {
